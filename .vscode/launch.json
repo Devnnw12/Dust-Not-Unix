@@ -1,0 +1,17 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "GDB: Attach to QEMU (localhost:1234)",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/Dnu_oskernl/kernel.elf",
+			"miDebuggerServerAddress": "localhost:1234",
+			"miDebuggerPath": "gdb",
+			"MIMode": "gdb",
+			"cwd": "${workspaceFolder}",
+			"externalConsole": false,
+			"preLaunchTask": "Build DNU (make)"
+		}
+	]
+}

@@ -1,0 +1,90 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build DNU (make)",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"-C",
+				"${workspaceFolder}/Dnu_oskernl",
+				"-j",
+				"${env:NUMBER_OF_PROCESSORS}"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Clean DNU",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"-C",
+				"${workspaceFolder}/Dnu_oskernl",
+				"clean"
+			],
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "CMake: Configure hal",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"-S",
+				"${workspaceFolder}/hal",
+				"-B",
+				"${workspaceFolder}/hal/build"
+			],
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "CMake: Build hal",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"${workspaceFolder}/hal/build",
+				"--",
+				"-j",
+				"${env:NUMBER_OF_PROCESSORS}"
+			],
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Run QEMU (DNU kernel placeholder)",
+			"type": "shell",
+			"command": "qemu-system-x86_64",
+			"args": [
+				"-kernel",
+				"${workspaceFolder}/Dnu_oskernl/kernel.elf",
+				"-serial",
+				"stdio",
+				"-display",
+				"none",
+				"-s",
+				"-S"
+			],
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": []
+		}
+	]
+}
