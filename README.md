@@ -8,9 +8,11 @@ Dust not unix atau DNU adalah kernel buatan saya yang menggabungkan ketiga model
 DNU.img
   +-- base/
   |    +--shell/
+  |
   +-- boot/
   |     +-- uefi/
   |     +-- bootdata/
+  |
   +-- Dnu_oskernl/
   |     +-- corpses/
   |     +-- ipc/
@@ -19,6 +21,7 @@ DNU.img
   |     +-- libsa/
   |     +-- ob/
   |     +-- default_pager/
+  |
   +-- driver/
   |     +-- bsddev/
   |     |    +--skywalk
@@ -28,13 +31,16 @@ DNU.img
   |     |    +-- Exclaves/
   |     |    +-- IOKitUser/
   |     |    +-- kernel/
-  |     |    +-- system
+  |     |    +-- system/
+  |
   +-- include/
   |     |    +-- libkdd/
   |     |    +-- libkern/
   |     |    +-- libsa/
   |     |    +-- libsyscall
-  +-- config.cpp/
+  |
   +-- hal/
   |     |    +--halx86_64/
+  |
+  +-- config.cpp/
 ```
